@@ -63,7 +63,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Automatic Mode", group="Linear OpMode")
+@TeleOp(name="Automatic Mode", group="OpMode thing")
 
 public class BasicOmniOpMode_Linear extends LinearOpMode {
 
@@ -83,40 +83,33 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
         runtime.reset();
 
         while (opModeIsActive()) {
-            double max; //???
+            //double max; //???
 
             // Combine the joystick requests for each axis-motion to determine each wheel's power.
             // Set up a variable for each drive wheel to save the power level for telemetry.
-            double frontLeftPower  = axial + lateral + yaw;
+            //double motorPower  = axial + lateral + yaw;
 
             // Normalize the values so no wheel power exceeds 100%
             // This ensures that the robot maintains the desired motion.
-            max = Math.max(Math.abs(frontLeftPower), Math.abs(frontRightPower));
-            max = Math.max(max, Math.abs(backLeftPower));
-            max = Math.max(max, Math.abs(backRightPower));
+            //max = Math.max(Math.abs(motorPower),
 
-            if (max > 1.0) {
 
-                frontLeftPower  /= max;
-                frontRightPower /= max;
-                backLeftPower   /= max;
-                backRightPower  /= max;
+            //if (max > 1.0) {
 
-            }
+           //     motorPower  /= max;
+            //}
 
-            /*
-            frontLeftPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
-            */
 
-            // Send calculated power to motor
-
+            //bruh just work
             testmotor.setPower(69); //is it going to move??  idk,
 
+
+
             // Show the elapsed game time and wheel power.
-            telemetry.addData("Status", "Run Time: " + runtime.toString());
-            telemetry.addData("Front left/Right", "%4.2f, %4.2f", frontLeftPower, frontRightPower);
-            telemetry.addData("Back  left/Right", "%4.2f, %4.2f", backLeftPower, backRightPower);
-            telemetry.update();
+            //telemetry.addData("Status", "Run Time: " + runtime.toString());
+            //telemetry.addData("Front left/Right", "%4.2f, %4.2f", frontLeftPower, frontRightPower);
+            //telemetry.addData("Back  left/Right", "%4.2f, %4.2f", backLeftPower, backRightPower);
+            //telemetry.update();
         }
 
     }
