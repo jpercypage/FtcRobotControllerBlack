@@ -24,9 +24,9 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
         BackLeft = hardwareMap.get(DcMotor.class, "back_left_drive");
         BackRight = hardwareMap.get(DcMotor.class, "back_left_drive");
 
-        FrontLeft.setDirection(DcMotor.Direction.FORWARD);
+        FrontLeft.setDirection(DcMotor.Direction.REVERSE);
         FrontRight.setDirection(DcMotor.Direction.REVERSE);
-        BackLeft.setDirection(DcMotor.Direction.FORWARD);
+        BackLeft.setDirection(DcMotor.Direction.REVERSE);
         BackRight.setDirection(DcMotor.Direction.REVERSE);
 
         telemetry.addData("Status", "Initialized"); telemetry.update();
