@@ -12,10 +12,10 @@ public class Autonomous extends LinearOpMode {
 
     // Declare OpMode members for each of the 4 motors.
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor FrontLeft = null;
-    private DcMotor BackLeft = null;
-    private DcMotor FrontRight = null;
-    private DcMotor BackRight = null;
+//    private DcMotor FrontLeft = null;
+//    private DcMotor BackLeft = null;
+//    private DcMotor FrontRight = null;
+//    private DcMotor BackRight = null;
 
     private DcMotorEx launchMotor = null;
 
@@ -30,14 +30,15 @@ public class Autonomous extends LinearOpMode {
 
         launchMotor = hardwareMap.get(DcMotorEx.class, "launch_motor");
 
-        FrontLeft.setDirection(DcMotor.Direction.REVERSE);
-        FrontRight.setDirection(DcMotor.Direction.REVERSE);
-        BackLeft.setDirection(DcMotor.Direction.REVERSE);
-        BackRight.setDirection(DcMotor.Direction.REVERSE);
+//        FrontLeft.setDirection(DcMotor.Direction.REVERSE);
+//        FrontRight.setDirection(DcMotor.Direction.REVERSE);
+//        BackLeft.setDirection(DcMotor.Direction.REVERSE);
+//        BackRight.setDirection(DcMotor.Direction.REVERSE);
 
         launchMotor.setDirection(DcMotorEx.Direction.FORWARD);
 
         launchMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        launchMotor.setVelocity(300)
 
         telemetry.addData("Status", "Initialized"); telemetry.update();
 
@@ -55,7 +56,7 @@ public class Autonomous extends LinearOpMode {
             //BackRight.setPower(69);
 
             //experimentatiom
-            launchMotor.setVelocity(100)
+//            launchMotor.setVelocity(100)
 
 
         }
